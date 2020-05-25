@@ -11,16 +11,16 @@ c = 299792458  #light speed#You can touch
 
 #L_peri = 6.98179e10 
 #V_peri = 58976.*4.6/6.98179
-L_peri = 4.60012e10 
-V_peri = 58976.
+L_peri = 6.98179e10#4.60012e10 
+V_peri = 58976.*4.60012/6.98179
 L = m*V_peri*L_peri
 
 E = 0.5*(V_peri**2) -G*M/L_peri
 a = -G*M/(2*E)
 
-alpha = 3*(L**2)/(c**2)/(m**2)*1e0#Adjustment Parameter#You can touch
+alpha = 3*(L**2)/(c**2)/(m**2)*1e03#Adjustment Parameter#You can touch
 
-P = 100 #Number of rotation#You can touch
+P = 10 #Number of rotation#You can touch
 
 N = 1000*P # number of time intervals
 T = 2*np.pi*(a**1.5)/((G*M)**0.5)*P # total time elapse
