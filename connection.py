@@ -33,11 +33,7 @@ def f(t,r):
         v[i] = r[i+dim]
     con = connection(x)
     diff_x = v
-    diff_v = np.zeros(dim)
-    for i in range(dim):
-        for j in range(dim):
-            for k in range(dim):
-                diff_v[i] = con.x[i][j][k]*v[j]*v[k]
+    diff_v = -np.tensordot(np.tensordot(con.x,v,axes=([2],[0])),v,axes=([1],[0]))
     
     return np.concatenate((diff_x,diff_v),axis=None)
 
