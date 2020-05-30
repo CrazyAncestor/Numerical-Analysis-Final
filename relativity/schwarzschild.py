@@ -131,9 +131,9 @@ if __name__ == '__main__':
     # first = p[0]-a[0]
     # last = p[-1]-a[-1]
     # rad = np.arctan(last[1]/last[0]) - np.arctan(first[1]/first[0])
-    rad = psi[p[-1]] - psi[p[0]] -2*np.pi*(p[-1]- p[0])/n#np.arctan(p[-1][1]/p[-1][0]) - np.arctan(p[0][1]/p[0][0])
-    print("arc second:", rad/2/np.pi*360*3600)
-    rad = psi[a[-1]] - psi[a[0]] -2*np.pi*(a[-1]- a[0])/n
+    """rad = psi[p[-1]] - psi[p[0]] -2*np.pi*(p[-1]- p[0])/n#np.arctan(p[-1][1]/p[-1][0]) - np.arctan(p[0][1]/p[0][0])
+    print("arc second:", rad/2/np.pi*360*3600)"""
+    rad = psi[a[-1]] - psi[a[0]] -2*np.pi*(a[-1]- a[0])/n -(psi[p[-1]] - psi[p[0]] -2*np.pi*(p[-1]- p[0])/n)
     print("arc second:", rad/2/np.pi*360*3600)
 
 
