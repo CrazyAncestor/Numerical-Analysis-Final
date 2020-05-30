@@ -89,7 +89,7 @@ if __name__ == '__main__':
     print("rk2 error:"+str(np.sum((rk2_newton-stnd)**2)/len(stnd)))
     print("rk4 error:"+str(np.sum((rk4_newton-stnd)**2)/len(stnd)))
     
-    plt.plot(t, stnd, color ='blue', linewidth =2, linestyle ='-',label = 'standard')
+    plt.plot(t, stnd, color ='blue', linewidth =2, linestyle ='-',label = 'exact solution')
     plt.plot(t, euler_newton, color ='green', linewidth =2, linestyle =':',label = 'euler_newton')
     plt.plot(t, rk2_newton, color ='brown', linewidth =2, linestyle =':',label = 'rk2_newton')
     plt.plot(t, rk4_newton, color ='red', linewidth =2, linestyle ='--',label = 'rk4_newton')
