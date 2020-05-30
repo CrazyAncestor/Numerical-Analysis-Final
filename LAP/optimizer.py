@@ -54,7 +54,8 @@ if __name__ == '__main__':
     stnd = 5. *(t**2)
     
     
-    plt.plot(t, track, color ='blue', linewidth =2, linestyle ='-')
-    plt.plot(t, stnd, color ='red', linewidth =2, linestyle ='--')
+    plt.plot(t, track, color ='blue', linewidth =2, linestyle ='-',label='exact solution')
+    plt.plot(t, stnd, color ='red', linewidth =2, linestyle ='--',label='solve by scipy.optimize')
+    plt.legend(loc='upper left')
     plt.show()
     
