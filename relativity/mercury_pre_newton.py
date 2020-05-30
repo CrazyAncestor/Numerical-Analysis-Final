@@ -18,9 +18,9 @@ L = m*V_peri*L_peri
 E = 0.5*(V_peri**2) -G*M/L_peri
 a = -G*M/(2*E)
 
-alpha = 3*(L**2)/(c**2)/(m**2)*1e03#Adjustment Parameter#You can touch
+alpha = 3*(L**2)/(c**2)/(m**2)*1e3#Adjustment Parameter#You can touch
 
-P = 10 #Number of rotation#You can touch
+P = 100#Number of rotation#You can touch
 
 N = 1000*P # number of time intervals
 T = 2*np.pi*(a**1.5)/((G*M)**0.5)*P # total time elapse
@@ -91,7 +91,7 @@ def garbage(track):
          if _save:
             apogee.append(track[i])
          #_save = not _save
-   #perihelion = perihelion[:len(perihelion)-1]
+   perihelion = perihelion[:len(perihelion)-1]
    apogee = apogee[:len(apogee)-1]
 
    return np.array(perihelion), np.array(apogee)
@@ -124,13 +124,13 @@ if __name__ == '__main__':
         plt.plot(p[:,0], p[:,1], color ='red', label = 'perihelion')
         plt.plot(a[:,0], a[:,1], color ='blue', label = 'apogee')
         
-        # first = p[0]-a[0]
-        # last = p[-1]-a[-1]
-        # rad = np.arctan(last[1]/last[0]) - np.arctan(first[1]/first[0])
-        rad = np.arctan(p[-1][1]/p[-1][0]) - np.arctan(p[0][1]/p[0][0])
+        first = p[0]-a[0]
+        last = p[-1]-a[-1]
+        rad = np.arctan(last[1]/last[0]) - np.arctan(first[1]/first[0])
+        #rad = np.arctan((p[-1][1]-a[-1][1])/(p[-1][0]-a[-1][0])) - np.arctan(p[0][1]/p[0][0])
         print("arc second:", rad/2/np.pi*360*3600)
-        rad = np.arctan(a[-1][1]/a[-1][0]) - np.arctan(a[0][1]/a[0][0])
-        print("arc second:", rad/2/np.pi*360*3600)
+        #rad = np.arctan(a[-1][1]/a[-1][0]) - np.arctan(a[0][1]/a[0][0])
+        #print("arc second:", rad/2/np.pi*360*3600)
     
     plt.legend(loc='lower left')
     plt.show()
