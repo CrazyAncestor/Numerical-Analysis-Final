@@ -12,7 +12,7 @@ rs = 2*G*M/(c**2)#Schwarzschild radius
 gmc2 = G*M/(c**2)
 gm = G*M
 
-r0 = rs*2.2
+r0 = rs*2.
 v0 = (G*M/r0)**0.5
 gamma = (1-(v0/c)**2)**(-0.5)
 P = 4.
