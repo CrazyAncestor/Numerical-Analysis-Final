@@ -12,7 +12,7 @@ rs = 2*G*M/(c**2)#Schwarzschild radius
 gmc2 = G*M/(c**2)
 gm = G*M
 
-r0 = rs*2.
+r0 = rs*3.#LeoWu
 v0 = (G*M/r0)**0.5
 gamma = (1-(v0/c)**2)**(-0.5)
 P = 4.
@@ -81,7 +81,7 @@ class planet(object):
             x3 = self.move(x,x2,dt)
             x = (self.move(x,x,dt) + 2*self.move(x,x1,dt) + 2*self.move(x,x2,dt) +self.move(x,x3,dt) )/6.
             if x[1]<(1.03*rs):
-                print('v/c:'+str((((x[5])**2)/(1-rs/x[1])+(x[1]*x[7])**2)**0.5/c))
+                print('v/c:'+str((((x[5])**2)/(1-rs/x[1])+(x[1]*x[7])**2)**0.5/(x[4]*c)))
                 break
             track.append(x)
             
