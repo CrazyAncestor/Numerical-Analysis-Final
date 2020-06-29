@@ -3,7 +3,7 @@ import scipy.optimize as opt
 import matplotlib.pyplot as plt
 
 
-L = 1.  # total length of the route
+L = 1.  # total length of the rout
 
 N = 100 # number of time intervals
 T = float(np.pi*8)  # total time elapse
